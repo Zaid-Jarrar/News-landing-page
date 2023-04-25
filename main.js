@@ -8,3 +8,11 @@ toggle?.addEventListener("click", () => {
   toggle.classList.toggle("active");
   backdrop.classList.toggle("active");
 });
+
+document.addEventListener("click", (event) => {
+  console.log(event);
+  if (!mobNav.contains(event.target) && !toggle.contains(event.target)) {
+    mobNav.classList.remove("active");
+    backdrop.classList.remove("active");
+  }
+});
