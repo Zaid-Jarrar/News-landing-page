@@ -30,13 +30,15 @@ function handleTouchStart(event) {
 function handleTouchMove(event) {
   // Calculate the distance swiped
   const distance = event.touches[0].clientX - startX;
-  const threshold = 50;
-  if (distance < threshold) {
+  const minThreshold = -150;
+  const maxThreshold = 150;
+  
+  if (distance < minThreshold) {
     // Show the mobile navigation menu if the user swipes to the right by at least 50px
     mobNav.classList.add("active");
     backdrop.classList.add("active");
     toggle.classList.add("active");
-  } else if (distance > threshold) {
+  } else if (distance > maxThreshold) {
     mobNav.classList.remove("active");
     backdrop.classList.remove("active");
     toggle.classList.remove("active");
