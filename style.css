@@ -327,14 +327,13 @@ footer {
     background: var(--clr-neutral-100);
     display: block;
     height: 100vh;
-    left: 35%;
     padding: clamp(5rem, 30vh, 8rem) 1.5em;
     position: fixed;
-    right: 0;
+    right: -100%;
     top: 0;
     z-index: 1000;
-    transition: transform 0.3s ease-out;
-    transform: translateX(100%);
+    transition: right 0.3s ease-out;
+    width: 70%;
   }
 
   .mobile-nav a {
@@ -362,7 +361,7 @@ footer {
   }
 
   .mobile-nav.active {
-    transform: translateX(0%);
+    right: 0;
   }
 
   .backdrop.active {
