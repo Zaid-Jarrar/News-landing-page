@@ -3,6 +3,19 @@ const toggle = document.querySelector(".mobile-nav-toggle");
 const mobNav = document.querySelector(".mobile-nav");
 
 const backdrop = document.querySelector(".backdrop");
+
+const links = document.getElementsByTagName("li");
+
+function closeMobNav() {
+  mobNav.classList.remove("active");
+  toggle.classList.remove("active");
+  backdrop.classList.remove("active");
+}
+
+Array.from(links).forEach((element) => {
+  element.addEventListener("click", closeMobNav);
+});
+
 toggle?.addEventListener("click", () => {
   mobNav.classList.toggle("active");
   toggle.classList.toggle("active");
@@ -32,7 +45,7 @@ function handleTouchMove(event) {
   const distance = event.touches[0].clientX - startX;
   const minThreshold = -150;
   const maxThreshold = 150;
-  
+
   if (distance < minThreshold) {
     // Show the mobile navigation menu if the user swipes to the right by at least 50px
     mobNav.classList.add("active");

@@ -340,6 +340,11 @@ footer {
     font-size: var(--fs-600);
   }
 
+  /* To: only close the mob nav if the achor is clicked not the white space around it */
+  .mobile-nav li {
+    width: fit-content;
+  }
+
   .mobile-nav > * + * {
     margin-top: min(2rem, 3vh);
   }
